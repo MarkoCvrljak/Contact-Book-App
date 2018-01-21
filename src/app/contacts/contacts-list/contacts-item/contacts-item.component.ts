@@ -13,6 +13,4 @@ export class ContactsItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
 }
