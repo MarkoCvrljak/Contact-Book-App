@@ -37,7 +37,7 @@ export class ContactEditComponent{
             this.errorMessage = null;
         }
         else{
-            this.errorMessage = 'you can only enter numbers here!';
+            this.errorMessage = 'use numbers in phone field!';
         }
         }
 
