@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { EventEmitter } from '@angular/core';
 
 import { Contact } from './contact.model';
 
 @Injectable()
 
 export class ContactService{
-    public contactSelected = new EventEmitter<Contact>();
-    
+  
     private contacts: Contact[] = [
         new Contact(
           'Marko Markovic',
