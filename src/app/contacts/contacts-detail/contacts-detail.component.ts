@@ -33,7 +33,7 @@ onEditRecipe(){
 
 onDeleteRecipe() {
   this.contactsService.deleteRecipe(this.id);
-  this.router.navigate(['/recipes']);
+  this.router.navigate(['/contact']);
 }
 
 
