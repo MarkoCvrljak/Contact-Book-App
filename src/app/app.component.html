@@ -4,6 +4,7 @@
   <div class="roe">
     <div class="col-md-12">
       <app-contacts *ngIf="loadedFeature === 'contact'"></app-contacts>
+      <app-about *ngIf="loadedFeature !== 'contact'"></app-about>
     </div>
   </div>
 </div>

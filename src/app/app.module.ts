@@ -8,7 +8,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ContactsListComponent } from './contacts/contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
 import { ContactsItemComponent } from './contacts/contacts-list/contacts-item/contacts-item.component';
-
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { ContactsItemComponent } from './contacts/contacts-list/contacts-item/co
     ContactsComponent,
     ContactsListComponent,
     ContactsDetailComponent,
-    ContactsItemComponent
+    ContactsItemComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule
