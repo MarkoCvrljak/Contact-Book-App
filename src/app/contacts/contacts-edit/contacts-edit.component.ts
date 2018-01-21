@@ -7,12 +7,14 @@ import { ContactService } from '../contacts.service';
 @Component({
     selector: 'app-contacts-edit',
     templateUrl: './contacts-edit.component.html',
+    styleUrls: ['./contact-edit.component.css']
 })
 
 export class ContactEditComponent{
     id: number;
     editMode = false;
     contactForm: FormGroup;
+    public errorMessage:any = null;
 
     constructor(private route: ActivatedRoute,
         private contactService: ContactService,
@@ -30,6 +32,15 @@ export class ContactEditComponent{
         );
     }
 
+    public showErrorIfNotANumber(event:any){
+        if(event.charCode>=48 && event.charCode<=57){
+            this.errorMessage = null;
+        }
+        else{
+            this.errorMessage = 'you can only enter numbers here!';
+        }
+        }
+
     onSubmit() {
         // const newRecipe = new Recipe(
         //   this.recipeForm.value['name'],
@@ -37,9 +48,9 @@ export class ContactEditComponent{
         //   this.recipeForm.value['imagePath'],
         //   this.recipeForm.value['ingredients']);
         if (this.editMode) {
-          this.contactService.updateRecipe(this.id, this.contactForm.value);
+          this.contactService.updateContact(this.id, this.contactForm.value);
         } else {
-          this.contactService.addRecipe(this.contactForm.value);
+          this.contactService.addContact(this.contactForm.value);
         }
         this.onCancel();
       }
@@ -73,7 +84,8 @@ export class ContactEditComponent{
         this.contactForm = new FormGroup({
           'name': new FormControl(Name, Validators.required),
           'address': new FormControl(Address, Validators.required),
-          'email': new FormControl(Email, Validators.required),
+          'email': new FormControl(Email, [Validators.required,
+            Validators.pattern("[^ @]*@[^ @]*")]),
           'phone': new FormControl(Phone, Validators.required),
           'imagePath': new FormControl(ImagePath, Validators.required),
           'description': new FormControl(Description, Validators.required),
