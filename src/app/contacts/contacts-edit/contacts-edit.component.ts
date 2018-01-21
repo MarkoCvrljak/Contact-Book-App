@@ -53,7 +53,7 @@ export class ContactEditComponent{
           this.contactService.addContact(this.contactForm.value);
         }
         this.onCancel();
-        this.router.navigate(['/contact']);
+        
     }
 
     onCancel() {
