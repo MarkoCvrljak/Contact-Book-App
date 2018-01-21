@@ -9,6 +9,7 @@ import { ContactsListComponent } from './contacts/contacts-list/contacts-list.co
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
 import { ContactsItemComponent } from './contacts/contacts-list/contacts-item/contacts-item.component';
 import { AboutComponent } from './about/about.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AboutComponent } from './about/about.component';
     ContactsListComponent,
     ContactsDetailComponent,
     ContactsItemComponent,
-    AboutComponent
+    AboutComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule
