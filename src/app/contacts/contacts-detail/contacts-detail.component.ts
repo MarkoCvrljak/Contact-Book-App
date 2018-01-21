@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+
 import { Contact } from '../contact.model';
 import { ContactService } from '../contacts.service';
 
@@ -24,6 +25,10 @@ ngOnInit() {
         this.contact = this.contactsService.getSingleContact(this.id);
       }
     );
+}
+
+onEditRecipe(){
+  this.router.navigate(['edit'], {relativeTo: this.route})
 }
 
 
