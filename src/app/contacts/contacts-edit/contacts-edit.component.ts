@@ -75,7 +75,7 @@ export class ContactEditComponent{
           Address = contact.address;
           Email = contact.email;
           Phone = contact.phone;
-          ImagePath =contact.imagePath;
+          ImagePath = contact.imagePath;
           Description = contact.description;
           
           
@@ -86,13 +86,13 @@ export class ContactEditComponent{
           'address': new FormControl(Address, Validators.required),
           'email': new FormControl(Email, [Validators.required,
             Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        )]),
+            )]),
           'phone': new FormControl(Phone, Validators.required),
           'imagePath': new FormControl(ImagePath, Validators.required),
           'description': new FormControl(Description, Validators.required),
           
         });
-      }
+    }
     
 
 }

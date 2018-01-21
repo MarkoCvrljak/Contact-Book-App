@@ -16,9 +16,15 @@ export class ContactsListComponent implements OnInit {
 
   constructor(private contactService: ContactService,
   private router: Router,
-private route: ActivatedRoute) { }
+  private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.contactService.contactsChanged
+    .subscribe(
+      (contacts: Contact[]) => {
+        this.contacts = contacts;
+      }
+    )
     this.contacts = this.contactService.getContact();
   }
 
