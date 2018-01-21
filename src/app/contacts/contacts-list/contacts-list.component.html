@@ -8,8 +8,9 @@
   <div class="col-xs-12">
     
     <app-contacts-item
-    *ngFor="let contactEl of contacts"
-    [contact]="contactEl"></app-contacts-item>
+    *ngFor="let contactEl of contacts; let i = index;"
+    [contact]="contactEl"
+    [index]="i"></app-contacts-item>
   </div>
 </div>
 
