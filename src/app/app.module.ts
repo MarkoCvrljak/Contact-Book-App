@@ -13,6 +13,7 @@ import { ContactsItemComponent } from './contacts/contacts-list/contacts-item/co
 import { AboutComponent } from './about/about.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ContactService } from './contacts/contacts.service';
+import { ContactsStartComponent } from './contacts/contacts-start/contacts-start.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ContactService } from './contacts/contacts.service';
     ContactsDetailComponent,
     ContactsItemComponent,
     AboutComponent,
-    DropdownDirective
+    DropdownDirective,
+    ContactsStartComponent
   ],
   imports: [
     BrowserModule,

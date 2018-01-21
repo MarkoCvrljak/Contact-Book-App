@@ -23,4 +23,9 @@ export class ContactService{
       getContact(){
           return this.contacts.slice();
       }
+
+      getSingleContact(index: number) {
+        return this.contacts[index];
+      }
+
 }

@@ -1,15 +1,30 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Contact } from '../contact.model';
+import { ContactService } from '../contacts.service';
 
 @Component({
   selector: 'app-contacts-detail',
   templateUrl: './contacts-detail.component.html'
 })
 export class ContactsDetailComponent implements OnInit {
-  @Input() contact: Contact;
-  constructor() { }
+  id: number;
+  contact: Contact;
 
-  ngOnInit() {
-  }
+ constructor(private route: ActivatedRoute,
+  private contactsService: ContactService,
+  private router: Router) {
+ }
+
+ngOnInit() {
+  this.route.params
+    .subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+        this.contact = this.contactsService.getSingleContact(this.id);
+      }
+    );
+}
+
 
 }
