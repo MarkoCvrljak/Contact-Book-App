@@ -42,18 +42,18 @@ export class ContactEditComponent{
         }
 
     onSubmit() {
-        // const newRecipe = new Recipe(
-        //   this.recipeForm.value['name'],
-        //   this.recipeForm.value['description'],
-        //   this.recipeForm.value['imagePath'],
-        //   this.recipeForm.value['ingredients']);
+        // const newContact = new Contact(
+        //   this.contactForm.value['name'],
+        //   this.contactForm.value['description'],
+        //   this.contactForm.value['imagePath'],
+        //   this.contactForm.value['ingredients']);
         if (this.editMode) {
           this.contactService.updateContact(this.id, this.contactForm.value);
         } else {
           this.contactService.addContact(this.contactForm.value);
         }
         this.onCancel();
-        
+        this.router.navigate(['/contact']);
     }
 
     onCancel() {
