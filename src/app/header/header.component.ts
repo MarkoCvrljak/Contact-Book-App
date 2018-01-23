@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Contact } from '../contacts/contact.model';
+
+import { ContactService } from '../contacts/contacts.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +9,19 @@ import { Component } from '@angular/core';
   
 })
 export class HeaderComponent {
+    contacts: Contact[];
     
+    constructor(private contactService: ContactService){
+
+    }
+
+    getContacts(){
+      this.contactService.contactsChanged
+      .subscribe(
+        (contacts: Contact[]) => {
+          this.contacts = contacts;
+        }
+      )
+      this.contacts = this.contactService.getContact()
+    }
 }

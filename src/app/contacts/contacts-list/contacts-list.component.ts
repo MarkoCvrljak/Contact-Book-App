@@ -11,21 +11,37 @@ import { ContactService } from '../contacts.service'
   
 })
 export class ContactsListComponent implements OnInit {
+  public productsPerPage = 4;
+  public selectedPage = 1;
   
-  contacts: Contact[];
 
   constructor(private contactService: ContactService,
   private router: Router,
   private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.contactService.contactsChanged
-    .subscribe(
-      (contacts: Contact[]) => {
-        this.contacts = contacts;
-      }
-    )
-    this.contacts = this.contactService.getContact();
+     
+  }
+
+  get contacts(){
+    let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
+    return this.contactService.getContact()
+    .slice(pageIndex, pageIndex + this.productsPerPage);
+  }
+
+  changePageSize(newSize: number){
+    this.productsPerPage = Number(newSize);
+    this.changePage(1);
+  }
+
+  changePage(newPage: number){
+    this.selectedPage = newPage;
+  }
+
+    get pageNumbers(): number[] {
+    return Array(Math.ceil(this.contactService
+    .getContact().length / this.productsPerPage))
+    .fill(0).map((x, i) => i + 1);
   }
 
   onNewContact(){

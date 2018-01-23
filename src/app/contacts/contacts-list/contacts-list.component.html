@@ -12,5 +12,22 @@
     [contact]="contactEl"
     [index]="i"></app-contacts-item>
   </div>
+  <div style="position:fixed; bottom:35px;" >
+    <div class="form-inline m-r-1">
+        <select class="form-control" [value]="productsPerPage"
+        (change)="changePageSize($event.target.value)">
+        <option value="3">3 per Page</option>
+        <option value="4">4 per Page</option>
+        <option value="6">6 per Page</option>
+        <option value="8">8 per Page</option>
+        </select>
+    </div>
+    <div class="btn-group">
+        <button *ngFor="let page of pageNumbers" (click)="changePage(page)"
+        class="btn btn-outline-primary" [class.active]="page == selectedPage">
+        {{page}}
+        </button>
+    </div>
+</div>
 </div>
 
