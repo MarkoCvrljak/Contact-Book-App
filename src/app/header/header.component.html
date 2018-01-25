@@ -9,15 +9,7 @@
             <li routerLinkActive="active"><a routerLink="/about">About</a></li>
             <li routerLinkActive="active" (click)="getContacts()"><a routerLink="/contact">Contacts</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown" appDropdown>
-            <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage Data <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a style="cursor: pointer;" (click)="saveToLocal()">Save Data</a></li>
-              <li><a style="cursor: pointer;" (click)="getFromLocal()">Get Data</a></li>
-            </ul>
-          </li>
-        </ul>
+        
       </div>
     </div>
   </nav>
