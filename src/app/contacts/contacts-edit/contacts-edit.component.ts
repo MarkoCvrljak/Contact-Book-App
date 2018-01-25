@@ -66,8 +66,8 @@ export class ContactEditComponent{
         let Address = '';
         let Email = '';
         let Phone = '';
-        let ImagePath = '';
-        let Description = '';
+        let City = '';
+        let State = '';
         
     
         if (this.editMode) {
@@ -76,8 +76,8 @@ export class ContactEditComponent{
           Address = contact.address;
           Email = contact.email;
           Phone = contact.phone;
-          ImagePath = contact.imagePath;
-          Description = contact.description;
+          City = contact.city;
+          State = contact.state;
           
           
         }
@@ -89,8 +89,8 @@ export class ContactEditComponent{
             Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             )]),
           'phone': new FormControl(Phone, Validators.required),
-          'imagePath': new FormControl(ImagePath, Validators.required),
-          'description': new FormControl(Description, Validators.required),
+          'city': new FormControl(City, Validators.required),
+          'state': new FormControl(State, Validators.required),
           
         });
     }

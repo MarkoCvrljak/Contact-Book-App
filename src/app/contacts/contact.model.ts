@@ -3,17 +3,17 @@ export class Contact {
     public address: string;
     public email: string;
     public phone: string;
-    public imagePath: string;
-    public description: string;
+    public city: string;
+    public state: string;
     
   
-    constructor(name: string, address:string, email: string, phone:string, imagePath: string, description:string) {
+    constructor(name: string, address:string, email: string, phone:string, city: string, state:string) {
       this.name = name;
       this.address = address;
       this.email = email;
       this.phone = phone;
-      this.imagePath = imagePath;
-      this.description = description;
+      this.city = city;
+      this.state = state;
       
     }
   }

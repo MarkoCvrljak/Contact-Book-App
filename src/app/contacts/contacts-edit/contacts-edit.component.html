@@ -64,31 +64,27 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="form-group">
-              <label for="imagePath">Image URL</label>
+              <label for="city">City</label>
               <input
                 type="text"
-                id="imagePath"
-                formControlName="imagePath"
+                id="city"
+                formControlName="city"
                 class="form-control"
-                #imagePath>
+                >
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <img [src]="imagePath.value" class="img-responsive">
-          </div>
-        </div>
+       
         <div class="row">
           <div class="col-xs-12">
             <div class="form-group">
-              <label for="description">Description</label>
-              <textarea
+              <label for="state">State</label>
+              <input
                 type="text"
-                id="description"
+                id="state"
                 class="form-control"
-                formControlName="description"
-                rows="6"></textarea>
+                formControlName="state"
+                rows="6">
             </div>
           </div>
         </div>
