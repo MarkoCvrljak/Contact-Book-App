@@ -68,7 +68,7 @@ export class ContactEditComponent{
         let Phone = '';
         let ImagePath = '';
         let Description = '';
-        let Ingredients = new FormArray([]);
+        
     
         if (this.editMode) {
           const contact = this.contactService.getSingleContact(this.id);

@@ -24,4 +24,11 @@ export class HeaderComponent {
       )
       this.contacts = this.contactService.getContact()
     }
+
+    saveToLocal(){
+      this.contacts = this.contactService.getContact();
+      localStorage.setItem('contacts', JSON.stringify(this.contacts));
+      console.log(this.contacts);
+      
+    }
 }
