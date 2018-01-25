@@ -13,7 +13,6 @@ export class ContactService{
 
 
       getContact(){
-        
         return this.contacts;
       }
 
@@ -33,6 +32,10 @@ export class ContactService{
         localStorage.setItem('contacts', JSON.stringify(this.contacts));
       }
 
-      
+      deleteContact(index: number) {
+        this.contacts.splice(index, 1);
+        this.contactsChanged.next(this.contacts.slice());
+        localStorage.setItem('contacts', JSON.stringify(this.contacts));
+      }
 
 }

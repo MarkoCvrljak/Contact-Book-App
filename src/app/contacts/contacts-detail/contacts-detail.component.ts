@@ -27,6 +27,14 @@ ngOnInit() {
     );
 }
 
+onEditContact(){
+  this.router.navigate(['edit'], {relativeTo: this.route})
+}
+
+onDeleteContact() {
+  this.contactsService.deleteContact(this.id);
+  this.router.navigate(['/contact']);
+}
 
 
 
