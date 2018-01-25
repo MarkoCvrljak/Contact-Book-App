@@ -13,7 +13,7 @@ export class ContactService{
 
 
       getContact(){
-          return this.contacts.slice();
+        return this.contacts;
       }
 
       getSingleContact(index: number) {
@@ -23,11 +23,13 @@ export class ContactService{
       updateContact(index: number, newFormValues: Contact){
         this.contacts[index] = newFormValues;
         this.contactsChanged.next(this.contacts.slice());
+        localStorage.setItem('contacts', JSON.stringify(this.contacts));
       }
 
       addContact(formValues: Contact){
         this.contacts.push(formValues);
         this.contactsChanged.next(this.contacts.slice());
+        localStorage.setItem('contacts', JSON.stringify(this.contacts));
       }
 
       deleteRecipe(index: number) {
