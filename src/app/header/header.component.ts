@@ -28,7 +28,12 @@ export class HeaderComponent {
     saveToLocal(){
       this.contacts = this.contactService.getContact();
       localStorage.setItem('contacts', JSON.stringify(this.contacts));
-      console.log(this.contacts);
       
+      
+    }
+
+    getFromLocal(){
+      this.contacts = JSON.parse(localStorage.getItem('contacts'));
+      console.log(this.contacts);
     }
 }

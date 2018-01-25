@@ -8,11 +8,12 @@ import { Contact } from './contact.model';
 export class ContactService{
     contactsChanged = new Subject<Contact[]>();
 
-    private contacts: Contact[] = [];
+    private contacts: Contact[] = JSON.parse(localStorage.getItem('contacts'));
       
 
 
       getContact(){
+        
         return this.contacts;
       }
 
@@ -32,9 +33,6 @@ export class ContactService{
         localStorage.setItem('contacts', JSON.stringify(this.contacts));
       }
 
-      deleteRecipe(index: number) {
-        this.contacts.splice(index, 1);
-        this.contactsChanged.next(this.contacts.slice());
-      }
+      
 
 }
